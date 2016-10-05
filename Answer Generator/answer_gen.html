@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+     <script>	
+var answers = {};
+answers["DAT: Survey of Natural Sciences"] = 
+["A", "B", "D", "C", "E", "C", "C", "D", "B", "C", "E", "A", "D", "E", "A", "C", "E", "B", "A", "E", "D", "B", "E", "E", "D",
+"A", "E", "B", "D", "C", "C", "C", "A", "B", "A", "A", "D", "B", "B", "D", "D", "A", "B", "D", "D", "E", "A", "B", "C", "C",
+"C", "A", "D", "A", "E", "E", "C", "C", "D", "A", "E", "C", "B", "E", "A", "C", "B", "B", "E", "D", "B", "D", "A", "E", "A",
+"A", "B", "E", "B", "B", "C", "B", "E", "A", "C", "B", "C", "C", "C", "C", "B", "B", "C", "A", "C", "D", "E", "E", "B", "C",];
+
+answers["DAT: Perceptual Ability Test"] = [
+"C", "A", "B", "A", "B", "D", "D", "B", "C", "D", "E", "E", "D", "B", "E", "B", "D", "C", "A", "A",
+"A", "D", "D", "A", "B", "C", "C", "D", "B", "B", "D", "C", "C", "C", "A", "C", "B", "B", "C", "C",
+"C", "B", "C", "B", "A", "A", "C", "C", "B", "D", "A", "B", "A", "B", "A", "B", "A", "E", "E", "D", 
+"B", "C", "C", "D", "C", "B", "E", "C", "E", "A", "D", "E", "B", "C", "D", "B", "C", "A", "D", "C",
+"B", "B", "C", "D", "C", "D", "A", "A", "A", "B"
+];
+
+answers["DAT: Reading Comprehension"] = [
+  "C", "E", "C", "B", "D", "D", "D", "E", "C", "A", "A", "C", "E", "B", "E", "A", "B",
+];
+
+answers["DAT: Quantative Reasoning Test"] = [
+  "D", "D", "B", "A", "B", "E", "B", "D", "A", "C", "A", "E", "B", "E",
+"E", "D", "B", "E", "B", "C", "C", "C", "E", "B", "E", "C", "B", "A",
+"D", "A", "B", "A", "E", "A", "A", "D", "A", "B", "E", "C",
+];
+
+answers["OAT: Quantative Reasoning"] = [
+"D", "B", "D", "B", "E", "B", "C", "A", "B", "B", "D", "B", "E", "A", "D",
+"A", "B", "A", "D", "D", "A", "A", "D", "C", "D", "A", "A", "B", "C", "B",
+"E", "B", "C", "D", "A", "C", "A", "E", "E", "E",
+];
+
+answers["OAT: Reading Comprehension"] = [
+  "D", "A", "A", "B", "A",
+  "A", "A", "C", "A", "D",
+  "D", "E", "A", "C", "C",
+];
+
+answers["OAT: Physics"] = [
+  "D", "E", "D", "E", "A", "B", "C", "A", "C", "E",
+  "A", "B", "C", "A", "C", "C", "C", "D", "C", "A", 
+  "A", "B", "B", "E", "D", "E", "B", "A", "C", "C",
+  "C", "A", "B", "E", "B", "B", "D", "D", "C", "B",
+];
+
+answers["OAT: Survey of Natural Sciences"] = [
+  "E", "C", "A", "D", "C", "C", "A", "E", "E", "C", "C", "D", "D", "D", "E", "E", "B", "A", "E", "D", "D", "A", "D", "B", "B",
+  "A", "C", "C", "B", "B", "A", "B", "D", "B", "D", "B", "A", "A", "C", "D", "C", "C", "E", "D", "D", "E", "A", "C", "A", "D", 
+  "B", "B", "D", "D", "E", "B", "A", "E", "A", "A", "A", "C", "C", "C", "B", "D", "B", "D", "D", "E", "C", "B", "C", "A", "D",
+  "A", "D", "B", "E", "E", "E", "D", "D", "B", "C", "E", "B", "A", "D", "C", "E", "A", "C", "C", "B", "B", "A", "B", "C", "C",
+];
+
+function getAnswer() {
+  var test = document.getElementById("tests");
+  var ans = answers[test.options[test.selectedIndex].text];
+  var index = parseInt(document.getElementById("num").value);
+  document.getElementById("answerHeader").innerHTML = ans[index-1];
+}
+
+	  </script>
+  </head> 
+  <body>
+    <select id="tests">
+      <option value="DAT: Survey of Natural Sciences">DAT: Survey of Natural Sciences</option>
+      <option value="DAT: Perceptual Ability Test">DAT: Perceptual Ability Test</option>
+      <option value="DAT: Reading Comprehension">DAT: Reading Comprehension</option>
+      <option value="DAT: Quantative Reasoning Test">DAT: Quantative Reasoning Test</option>
+      <option value="OAT: Survey of Natural Sciences">OAT: Survey of Natural Sciences</option>
+      <option value="OAT: Physics">OAT: Physics</option>
+      <option value="OAT: Reading Comprehension">OAT: Reading Comprehension</option>
+      <option value="OAT: Quantative Reasoning">OAT: Quantative Reasoning</option>
+    </select>
+
+    <p> 
+      Question number
+      <input id="num" type="number"> 
+    </p>
+    <p>
+      <button style="height:100px;width:100px" onClick="getAnswer()">Get Answer</button>
+    </p>
+    <h1 id="answerHeader">
+    </h1>
+    
+	
+  </body>
+</html>   
+
